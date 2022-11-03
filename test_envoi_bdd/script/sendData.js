@@ -22,21 +22,21 @@ form.addEventListener("submit", function(e) {
   return false;
 });
 
-// form.addEventListener('submit', function(e){
-//   e.preventDefault();
-//
-//   var xhrGet = new XMLHttpRequest();
-//   xhrGet.onreadystatechange = function(){
-//     if (this.readyState == 4 && this.status == 200){
-//       var get = JSON.parse(this.responseText);
-//       info.innerHTML = get;
-//       tank.value = get;
-//     }else if (this.readyState == 4 && this.status == 404){
-//       alert('error get');
-//     }
-//   }
-//   xhrGet.open('GET','function/getData.php');
-//   xhrGet.send();
-//   return false;
-// });
+form.addEventListener('submit', function(e){
+  e.preventDefault();
+
+  var xhrGet = new XMLHttpRequest();
+  xhrGet.onreadystatechange = function(){
+    if (this.readyState == 4 && this.status == 200){
+      var get = JSON.parse(this.responseText);
+      info.innerHTML = get;
+      tank.value = get;
+    }else if (this.readyState == 4 && this.status == 404){
+      alert('error get');
+    }
+  }
+  xhrGet.open('GET','function/getData.php');
+  xhrGet.send();
+  return false;
+});
 
