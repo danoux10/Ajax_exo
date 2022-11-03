@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<link rel="stylesheet" href="style.css">
+	<?php include_once 'variable.php';?>
+</head>
+<body>
+<header>Bienvenue <?php echo $_COOKIE['pseudo']; ?></header>
+<span id="info"></span>
+<div id="tank">
+	<h1>tank</h1>
+	<form action="function/information.php?task=tank">
+		<button type="submit">-</button>
+	</form>
+
+	<h2 id="tankInfo"></h2>
+
+	<form action="function/information.php?task=tankUp">
+		<button type="submit">+</button>
+	</form>
+</div>
+
+<script src="script/Ajax.js"></script>
+</body>
+</html>
