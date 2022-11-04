@@ -2,62 +2,71 @@
 include '../config/database.php';
 include '../config/variable.php';
 
-function getInfoTank(){
+$task = "list";
+
+if(array_key_exists("task",$_GET)){
+	$task = $_GET["task"];
+}
+
+if($task == "incrementTank"){
+	increment();
+}
+
+if ($task == "decrementTank"){
+	decrement();
+}
+
+if($task == "getData"){
+	getData();
+}
+//$success = 0;
+//$msg = 'initial';
+
+function getData(){
 	global $bdd;
 	
 	$info = $bdd ->prepare('SELECT tankData FROM player WHERE idUSer=?');
-	$info->execute([1]);
+	$info->execute([$_COOKIE['idUser']]);
 	foreach ($info as $data){
 		$tankData = $data['tankData'];
 	}
 	echo json_encode($tankData);
 }
 
-echo getInfoTank();
-
-$task = null;
-
-if(array_key_exists("task", $_GET)){
-	$task = $_GET["task"];
-}
-
-if($task == "incrementTank"){
-	incrementTank();
-}
-
-if($task == "decrementTank"){
-	decrementTank();
-}
-
-$success = 0;
-$msg = "fichier beta";
-
-$sendTank = $bdd->prepare('UPDATE player set tankData = ? WHERE idUser = ?');
-
-function incrementTank(){
- global $msg, $success, $sendTank;
+function increment(){
+	global $bdd;
 	if(!empty($_POST['tankDataIncrement'])){
 		$tankValue = htmlspecialchars($_POST['tankDataIncrement']);
 		$tankValue++;
-		$sendTank->execute([$tankValue,$_COOKIE['idUser']]);
+		$sendTank = $bdd->prepare('UPDATE player set tankData=? WHERE idUser=?');
+		$sendTank->execute([$tankValue,$_COOKIE['idUSer']]);
 		$success = 1;
-		$msg = "increment ok";
-		return $tankValue,$success,$msg;
+		$msg = 'increment';
 	}
+	$res = ["success"=>$success,"msg"=>$msg,"tankValue"=>$tankValue];;
+	echo json_encode($res);
 }
 
-
-function decrementTank(){
-	global $msg, $success, $sendTank;
+function decrement(){
+	global $bdd;
 	if(!empty($_POST['tankDataDecrement'])){
 		$tankValue = htmlspecialchars($_POST['tankDataDecrement']);
 		$tankValue--;
-		$sendTank->execute([$tankValue,$_COOKIE['idUser']]);
+		$sendTank = $bdd->prepare('UPDATE player set tankData=? WHERE idUser=?');
+		$sendTank->execute([$tankValue,$_COOKIE['idUSer']]);
 		$success = 2;
-		$msg = "decrement ok";
-		return $tankValue,$success,$msg;
+		$msg = 'decrement';
 	}
+	$res = ["success"=>$success,"msg"=>$msg,"tankValue"=>$tankValue];;
+	echo json_encode($res);
 }
 
-$res = ['success'=>$success, "msg"=>$msg, "tankVal"=>$tankValue];
-echo json_encode($res);
+function other(){
+	$success = 10;
+	$msg = "couscous";
+	$res = ["success"=>$success,"msg"=>$msg];
+	echo json_encode($res);
+}
+
+//$res = ["success"=>$success,"msg"=>$msg];
+//echo json_encode($res);
