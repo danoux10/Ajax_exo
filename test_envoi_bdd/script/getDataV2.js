@@ -6,6 +6,8 @@ var viewData = document.getElementById('info');
 var formInc = document.getElementById('tankIncrement');
 var formDec = document.getElementById('tankDecrement');
 
+var form = document.querySelector('form');
+
 function getData(){
   var dataGet = new XMLHttpRequest;
   dataGet.open('GET',"function/getData.php");
@@ -46,3 +48,4 @@ function getDataEvent(event){
 getData();
 formInc.addEventListener('submit',getDataEvent);
 formDec.addEventListener('submit',getDataEvent);
+
