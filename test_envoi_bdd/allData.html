@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<span>
+	<p>Tank</p>	<p id="tank"></p>
+</span>
+
+<span>
+	<p>Dps</p>
+	<p id="dps"></p>
+</span>
+
+<span>
+	<p>Heal</p>
+	<p id="heal"></p>
+</span>
+
+<div>
+	<h6>Tank</h6>
+	<form action="function/alpha.php?task=tankDecrement" id="tankDecrementForm" method="post">
+		<input type="text" value="" id="TankDecrement" class="tankData">
+		<button type="submit">-</button>
+	</form>
+
+	<form action="function/alpha.php?task=tankIncrement" id="tankIncrementForm" method="post">
+		<input type="text" value="" id="TankIncrement" class="tankData">
+		<button type="submit">+</button>
+	</form>
+</div>
+
+<div>
+	<h6>Dps</h6>
+	<form action="function/alpha.php?task=dpsDecrement" id="dpsDecrementForm" method="post">
+		<input type="text" value="" id="dpsDecrement" class="dpsData">
+		<button type="submit">-</button>
+	</form>
+
+	<form action="function/alpha.php?task=dpsIncrement" id="dpsIncrementForm" method="post">
+		<input type="text" value="" id="dpsIncrement" class="dpsData">
+		<button type="submit">+</button>
+	</form>
+</div>
+
+<div>
+	<h6>Heal</h6>
+	<form action="function/alpha.php?task=healDecrement" id="healDecrementForm" method="post">
+		<input type="text" value="" id="healDecrement" class="healData">
+		<button type="submit">-</button>
+	</form>
+
+	<form action="function/alpha.php?task=healIncrement" id="healIncrementForm" method="post">
+		<input type="text" value="" id="healIncrement" class="healData">
+		<button type="submit">+</button>
+	</form>
+</div>
+
+<br><br>
+
+<div>
+	<form action="function/alpha.php?task=reset" method="post" id="resetForm">
+		<span style="display:flex;align-items:center;">
+			<p>tank</p>
+			<input type="text" value="" id="tankReset" class="tankData">
+		</span>
+		<span style="display:flex;align-items:center;">
+			<p>dps</p>
+			<input type="text" value="" id="dpsReset" class="dpsData">
+		</span>
+		<span style="display:flex;align-items:center;">
+			<p>heal</p>
+			<input type="text" value="" id="healReset" class="healData">
+		</span>
+		<button type="submit">reset</button>
+	</form>
+</div>
+
+<script src="script/test.js"></script>
+
+</body>
+</html>

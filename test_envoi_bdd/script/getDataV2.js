@@ -48,4 +48,3 @@ function getDataEvent(event){
 getData();
 formInc.addEventListener('submit',getDataEvent);
 formDec.addEventListener('submit',getDataEvent);
-
