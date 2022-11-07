@@ -16,22 +16,8 @@ if ($task == "decrementTank"){
 	decrement();
 }
 
-//if($task == "getDataV2"){
-//	getData();
-//}
-//$success = 0;
-//$msg = 'initial';
-//
-//function getData(){
-//	global $bdd;
-//
-//	$info = $bdd ->prepare('SELECT tankData FROM player WHERE idUSer=?');
-//	$info->execute([$_COOKIE['idUser']]);
-//	foreach ($info as $data){
-//		$tankData = $data['tankData'];
-//	}
-//	echo json_encode($tankData);
-//}
+$success = 0;
+$msg = "arg";
 
 function increment(){
 	global $bdd;
@@ -61,12 +47,3 @@ function decrement(){
 	echo json_encode($res);
 }
 
-function other(){
-	$success = 10;
-	$msg = "couscous";
-	$res = ["success"=>$success,"msg"=>$msg];
-	echo json_encode($res);
-}
-
-//$res = ["success"=>$success,"msg"=>$msg];
-//echo json_encode($res);

@@ -8,6 +8,7 @@
 <body>
 
 <span>
+	<label for="btnTankDec">moins</label>
 	<p>Tank</p>	<p id="tank"></p>
 </span>
 
@@ -24,12 +25,12 @@
 <div>
 	<h6>Tank</h6>
 	<form action="function/alpha.php?task=tankDecrement" id="tankDecrementForm" method="post">
-		<input type="text" value="" id="TankDecrement" class="tankData">
-		<button type="submit">-</button>
+		<input type="text" value="" id="TankDecrement" class="tankData" name="tankDec">
+		<button type="submit" id="btnTankDec">-</button>
 	</form>
 
 	<form action="function/alpha.php?task=tankIncrement" id="tankIncrementForm" method="post">
-		<input type="text" value="" id="TankIncrement" class="tankData">
+		<input type="text" value="" id="TankIncrement" class="tankData" name="tankInc">
 		<button type="submit">+</button>
 	</form>
 </div>
@@ -37,12 +38,12 @@
 <div>
 	<h6>Dps</h6>
 	<form action="function/alpha.php?task=dpsDecrement" id="dpsDecrementForm" method="post">
-		<input type="text" value="" id="dpsDecrement" class="dpsData">
+		<input type="text" value="" id="dpsDecrement" class="dpsData" name="dpsDec">
 		<button type="submit">-</button>
 	</form>
 
 	<form action="function/alpha.php?task=dpsIncrement" id="dpsIncrementForm" method="post">
-		<input type="text" value="" id="dpsIncrement" class="dpsData">
+		<input type="text" value="" id="dpsIncrement" class="dpsData" name="dpsInc">
 		<button type="submit">+</button>
 	</form>
 </div>
@@ -50,12 +51,12 @@
 <div>
 	<h6>Heal</h6>
 	<form action="function/alpha.php?task=healDecrement" id="healDecrementForm" method="post">
-		<input type="text" value="" id="healDecrement" class="healData">
+		<input type="text" value="" id="healDecrement" class="healData" name="healDec">
 		<button type="submit">-</button>
 	</form>
 
 	<form action="function/alpha.php?task=healIncrement" id="healIncrementForm" method="post">
-		<input type="text" value="" id="healIncrement" class="healData">
+		<input type="text" value="" id="healIncrement" class="healData" name="healInc">
 		<button type="submit">+</button>
 	</form>
 </div>
@@ -66,15 +67,15 @@
 	<form action="function/alpha.php?task=reset" method="post" id="resetForm">
 		<span style="display:flex;align-items:center;">
 			<p>tank</p>
-			<input type="text" value="" id="tankReset" class="tankData">
+			<input type="text" value="" id="tankReset" class="tankData" name="tank">
 		</span>
 		<span style="display:flex;align-items:center;">
 			<p>dps</p>
-			<input type="text" value="" id="dpsReset" class="dpsData">
+			<input type="text" value="" id="dpsReset" class="dpsData" name="dps">
 		</span>
 		<span style="display:flex;align-items:center;">
 			<p>heal</p>
-			<input type="text" value="" id="healReset" class="healData">
+			<input type="text" value="" id="healReset" class="healData" name="heal">
 		</span>
 		<button type="submit">reset</button>
 	</form>
