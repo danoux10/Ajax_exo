@@ -6,6 +6,8 @@ var tankData = document.getElementsByClassName('tankData');
 var dpsData = document.getElementsByClassName('dpsData');
 var healData = document.getElementsByClassName('healData');
 
+var label = document.querySelector('label');
+
 //form
 var tankDecForm = document.getElementById('tankDecrementForm');
 var tankIncForm = document.getElementById('tankIncrementForm');
@@ -69,6 +71,7 @@ function tankDec(event){
   sendData.onreadystatechange = function(){
     if(this.readyState == 4 && this.status == 200){
       console.log(this.response);
+      getData();
     }else if(this.readyState == 4){
       alert('error tankDec');
     }
@@ -84,6 +87,7 @@ function tankInc(event){
   sendData.onreadystatechange = function(){
     if(this.readyState == 4 && this.status == 200){
       console.log(this.response);
+      getData();
     }else if (this.readyState == 4){
       alert('error tankInc');
     }
@@ -100,6 +104,7 @@ function dpsDec(event){
   sendData.onreadystatechange = function(){
     if(this.readyState == 4 && this.status == 200){
       console.log(this.response);
+      getData();
     }else if(this.readyState == 4){
       alert('error dpsDec');
     }
@@ -115,6 +120,7 @@ function dpsInc(event){
   sendData.onreadystatechange = function(){
     if(this.readyState == 4 && this.status == 200){
       console.log(this.response);
+      getData();
     }else if (this.readyState == 4){
       alert('error dpsInc');
     }
@@ -131,6 +137,7 @@ function healDec(event){
   sendData.onreadystatechange = function(){
     if(this.readyState == 4 && this.status == 200){
       console.log(this.response);
+      getData();
     }else if(this.readyState == 4){
       alert('error healDec');
     }
@@ -146,6 +153,7 @@ function healInc(event){
   sendData.onreadystatechange = function(){
     if(this.readyState == 4 && this.status == 200){
       console.log(this.response);
+      getData();
     }else if (this.readyState == 4){
       alert('error healInc');
     }
@@ -162,6 +170,7 @@ function reset(event){
   sendData.onreadystatechange = function(){
     if(this.readyState == 4 && this.status == 200){
       console.log(this.response);
+      getData();
     }else if (this.readyState == 4){
       alert('error reset');
     }
@@ -184,10 +193,11 @@ healIncForm.addEventListener('submit',healInc);
 resetForm.addEventListener('submit',reset);
 
 //get Data
-tankDecForm.addEventListener('submit',getDataEvent);
-tankIncForm.addEventListener('submit',getDataEvent);
-dpsDecForm.addEventListener('submit',getDataEvent);
-dpsIncForm.addEventListener('submit',getDataEvent);
-healDecForm.addEventListener('submit',getDataEvent);
-healIncForm.addEventListener('submit',getDataEvent);
-resetForm.addEventListener('submit',getDataEvent);
+// tankDecForm.addEventListener('submit',getDataEvent);
+// tankIncForm.addEventListener('submit',getDataEvent);
+// dpsDecForm.addEventListener('submit',getDataEvent);
+// dpsIncForm.addEventListener('submit',getDataEvent);
+// healDecForm.addEventListener('submit',getDataEvent);
+// healIncForm.addEventListener('submit',getDataEvent);
+// resetForm.addEventListener('submit',getDataEvent);
+
