@@ -14,8 +14,10 @@ function getCookie(name){
 
 console.log(getCookie("user"));
 
-if(getCookie('user') === null){
-  test.innerHTML = 'il y a rien';
-}else{
-  test.innerHTML = 'il y a un cookie';
-}
+test.innerHTML = getCookie('user')
+
+// if(getCookie('user') === null){
+//   test.innerHTML = 'il y a rien';
+// }else{
+//   test.innerHTML = 'il y a un cookie';
+// }
